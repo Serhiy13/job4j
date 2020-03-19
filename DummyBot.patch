@@ -1,0 +1,94 @@
+Index: chapter_001/src/main/java/condition/DummyBot.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- chapter_001/src/main/java/condition/DummyBot.java	(date 1582585307143)
++++ chapter_001/src/main/java/condition/DummyBot.java	(date 1582585307143)
+@@ -0,0 +1,16 @@
++package  condition;
++
++public class DummyBot {
++
++    public static String answer(String question) {
++        String rsl = "Это ставит меня в тупик. Задайте другой вопрос.";
++        if ("Привет, Бот.".equals(question)) {
++            rsl = "Привет, умник.";
++        } else if ("Пока.".equals(question)) {
++            rsl = "До скорой встречи.";
++        } else  {
++            rsl = "Это ставит меня в тупик. Задайте другой вопрос.";
++        }
++        return rsl;
++    }
++}
+Index: chapter_001/src/main/java/condition/AlertDivByZero.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- chapter_001/src/main/java/condition/AlertDivByZero.java	(revision 661049d3e3201834a72d9f45fe3206bc4c93da4c)
++++ chapter_001/src/main/java/condition/AlertDivByZero.java	(date 1582585307151)
+@@ -13,4 +13,5 @@
+             System.out.println("This is negative numbers.");
+         }
+     }
++
+ }
+Index: chapter_001/src/test/java/Tests/DummyBotTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- chapter_001/src/test/java/Tests/DummyBotTest.java	(date 1582585307144)
++++ chapter_001/src/test/java/Tests/DummyBotTest.java	(date 1582585307144)
+@@ -0,0 +1,32 @@
++package Tests;
++
++import condition.DummyBot;
++import org.junit.Test;
++import static org.hamcrest.core.Is.is;
++import static org.junit.Assert.assertThat;
++
++public class DummyBotTest {
++    @Test
++    public void whenGreetBot() {
++        assertThat(
++                DummyBot.answer("Привет, Бот."),
++                is("Привет, умник.")
++        );
++    }
++
++    @Test
++    public void whenByeBot() {
++        assertThat(
++                DummyBot.answer("Пока."),
++                is("До скорой встречи.")
++        );
++    }
++
++    @Test
++    public void whenUnknownBot() {
++        assertThat(
++                DummyBot.answer("Сколько будет 2 + 2?"),
++                is("Это ставит меня в тупик. Задайте другой вопрос.")
++        );
++    }
++}
+\ No newline at end of file
+Index: chapter_001/src/main/java/condition/Max.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- chapter_001/src/main/java/condition/Max.java	(date 1582585307143)
++++ chapter_001/src/main/java/condition/Max.java	(date 1582585307143)
+@@ -0,0 +1,8 @@
++package condition;
++
++public class Max {
++    public static int max(int left, int right) {
++        int result = left;
++        return result;
++    }
++}
