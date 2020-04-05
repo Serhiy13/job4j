@@ -2,11 +2,8 @@ package condition;
 
 public class MultiMax {
     public int max(int first, int second, int third) {
-        int result = first>=(second+third)?  first :(second+third):
-                     second>=(first+third)? second : (first+third):
-                     third>=(first+second)? third : (first+second):
-        return result;
-
-
-        }
+        int tmp = first>=second? first : second;
+        tmp = tmp>=third? tmp : third;
+        return tmp;
+    }
 }
